@@ -26,17 +26,11 @@ use crate::shapes::BoardShape;
 
 // move to the positions in the renderable_cells vec and update them accordignly
 
-fn start() {}
-
-fn update() {}
-
 fn main() {
     let mut stdout = stdout();
 
-    terminal::enable_raw_mode().unwrap();
     stdout.execute(terminal::EnterAlternateScreen).unwrap();
-
-    start();
+    terminal::enable_raw_mode().unwrap();
 
     let mut game_state = GameState::new();
     let mut game_renderer = GameRenderer::new(&mut stdout);
@@ -135,7 +129,7 @@ fn main() {
     }
 
     stdout.execute(terminal::Clear(ClearType::All)).unwrap();
-
     terminal::disable_raw_mode().unwrap();
+
     stdout.execute(terminal::LeaveAlternateScreen).unwrap();
 }

@@ -2,7 +2,7 @@ use std::time::Duration;
 
 use crossterm::event;
 
-use crate::game_state::GameState;
+use crate::{game_state::GameState, logger::Logger};
 
 enum Event {
     BoardChange(char),
@@ -49,6 +49,7 @@ impl<'a> EventHandler<'a> {
                         o_counter += 1;
                     }
                 }
+
                 self.game_state.round = if x_counter <= o_counter { 0 } else { 1 };
                 self.game_state.turn = self
                     .game_state
@@ -66,6 +67,9 @@ impl<'a> EventHandler<'a> {
                     println!("Failed to get the nth element of the board and replace it.");
                 }
                 // self.game_state.determine_winner();
+                if x_counter == 5 && o_counter == 4 {
+                    self.game_state.clear_board();
+                }
             }
             Event::Quit => self.game_state.should_quit = true,
             Event::Resize(x, y) => todo!(),

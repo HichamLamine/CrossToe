@@ -26,7 +26,7 @@ impl GameState {
     pub fn new() -> Self {
         Self {
             board: vec![' '; 9],
-            players: vec![Player::new("Hicham"), Player::new("Lamine")],
+            players: vec![Player::new("Hicham"), Player::new("Lahcen")],
             round: 0,
             turn: String::new(),
             should_quit: false,
