@@ -20,8 +20,8 @@ Coming soon (either to cargo crates or to the github releases).
 - [ ] Making the interface adaptive to the size of the terminal.
 - [ ] Writing an ascii generator from scratch?
 
-# Why tho?
+## Why tho?
 I've implemented this mainly for learning purposes.
 
-# Credits
+## Credits
 - [Crossterm](https://github.com/crossterm-rs/crossterm) for cross platform tui apps in rust.
